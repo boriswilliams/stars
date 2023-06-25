@@ -7,7 +7,10 @@ const Contact = () => {
     const [chatter, setChatter] = useState("");
     return (
         <View style={styles.container}>
-            {chatter ? <Chat/> : <Matches/>}
+            {chatter ? 
+                <Chat setChatter={setChatter} chatter={chatter}/> :
+                <Matches setChatter={setChatter}/>
+            }
         </View>
     )
 }
@@ -16,7 +19,6 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         height: "100%",
-        justifyContent: 'start',
     },
 });
 

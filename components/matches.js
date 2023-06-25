@@ -7,14 +7,20 @@ let people = [
     {name: "Gertrude", message: "balls"},
     {name: "Angela", message: "hello my name is angela and I'm a fairy do do doo, I need to make this really long. I guess this isn't long enough now, it needs to be really really long"},
 ];
-//people = Array(10).fill(people).flat();
+people = Array(10).fill(people).flat();
 
-const Matches = () => {
+const Matches = props => {
     return (
         <View style={styles.container}>
             <FlatList
                 data={people}
-                renderItem={({item}) => (<Friend name={ item.name } message={ item.message }/>)}
+                renderItem={({item}) => (
+                    <Friend
+                        name={ item.name }
+                        message={ item.message }
+                        setChatter={ props.setChatter }
+                    />
+                )}
             />
         </View>
     )

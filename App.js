@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, View, SafeAreaView, Dimensions } from 'react-native';
+import { Platform, StyleSheet, View, SafeAreaView, Dimensions, StatusBar } from 'react-native';
 import Window from './components/window';
 
 let topHeight = Platform.OS === 'android' ? 25 : 0;
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         backgroundColor: '#fff',
-        paddingTop: topHeight,
+        marginTop: StatusBar.currentHeight,
     },
     bar: {
         width: "100%",
